@@ -1,0 +1,1385 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+figure {
+    margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+
+
+/* lato-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/lato-v23-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/lato-v23-latin-900.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #102746;
+}
+
+img {
+  max-width: 100%; /*Изображение не бдет превышать 
+  размер контейнера, в котором оно находиться*/
+  height: auto; /*Чтобы оно сжималось 
+  пропорционально по высоте*/
+}
+
+/*heder style start*/
+
+.wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 15px; /* поля от краев экрана для контейнера */
+}
+
+.wrapper__full {
+  max-width: 1267px;
+  margin: 0 auto;
+  padding: 0 15px; /* поля от краев экрана для контейнера */
+}
+
+.section__title {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 42px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section__title::after {
+  display: block;
+  content: '';
+  width: 253px;
+  height: 3px;
+  background-color: #006DFE;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.hed {
+  position: fixed; /*фиксация в верхней части экрана*/
+  top: 0; /*Отступ сверху*/
+  left: 0; /*Отступ снизу*/
+  width: 100%; /*Будет занимать 100% ширину*/
+  transition: .3s linear;
+  padding-bottom: 20px;
+  z-index: 999;
+}
+
+.hed_active {
+  background: #0e1d28;
+}
+
+
+.hed__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.hed__list {
+  display: flex; /*Блочное поведение объекта*/
+  flex-wrap: wrap; /*Выстраивание flex в несколько строк*/
+}
+
+.hed__item {
+  margin-right: 82px;
+}
+
+/*.hed__item:last-child {
+  margin-right: 0;
+}*/
+
+.hed__link {
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+  text-decoration: none; /*Убрали подчеркивание*/
+}
+
+.hed__link:hover, /*При наведении*/ 
+.hed__link:focus, /*При получении фокуса*/ 
+.hed__link:active /*При активации (нажатии)*/ {
+  opacity: 0.75; /*Прозрачность*/
+}
+
+.hed__berger {
+  display: none;
+  width: 40px;
+  height: 28px;
+  position: relative;
+}
+
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+}
+
+.burger__line_first {
+  top: 0;
+}
+
+.burger__line_second {
+  top: 50%;
+  transform: translateY(-50%); /* 2 полоску располагаем по центру между первой и третьей */
+}
+
+.burger__line_third {
+  bottom: 0;
+}
+
+/*heder style end*/
+
+
+/*intro style start*/
+
+.intro {
+  min-height: 100vh; /*vh - на всю высоту окна. Минимальную высоту ограничили, максимальную - нет*/
+  background: url(../img/intro-bg.jpg) no-repeat center; /*Не повторяется*/;
+  background-size: cover /*Картинка покрывает весь блок при любых его размерах*/;
+  padding-top: 263px; /*Внутренний отступ*/
+  padding-bottom: 390px;
+  
+}
+
+.intro__title {
+  max-width: 619px; /*Ограничение ширины*/
+  font-weight: 500; /*Насыщенность шрифта*/
+  font-size: 50px; /*Размер шрифта*/
+  line-height: 60px; /*Высота строки*/
+  color: white; /*Цвет*/
+  margin-bottom: 22px; /*Внеш. отступ снизу*/
+}
+
+.intro__subtitle {
+  max-width: 546px;
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 59px;
+}
+
+.search-form__info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-form__field {
+  width: 297px;
+  background-color: transparent; /*Делает цвет прозрачным (обнуляет)*/
+  background: url(../img/svg/circle-ico.svg) no-repeat left 7px;
+  background-size: 20px; /*Фиксирует размер background*/
+  border: 0; /*Убирает границы (рамку) вокруг элемента */
+  border-bottom: 2px solid #BFC0C5;
+  margin-right: 60px;
+  padding-left: 43px;
+  padding-bottom: 22px;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+}
+
+.search-form__field::placeholder {
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+}
+
+.search-form__submit {
+  padding: 15px 39px; /*Отступ текста от границ кнопки*/
+  text-transform: uppercase; /*Заглавные буквы*/
+  font-weight: 500;
+  font-size: 24px;
+  color: white;
+  background: #0e66da;;
+  border: 0;
+  margin-left: ;
+}
+
+.search-form__submit:hover, 
+.search-form__submit:focus, 
+.search-form__submit:active {
+  background: #1B7DFF
+
+}
+
+
+/*intro style end*/
+
+
+
+/*benefits style start*/
+
+.benefits {
+  margin-bottom: 131px;
+}
+
+.benefits__wrap {
+  max-width: 1262px;
+  background-color: white;
+  margin: 0 auto;
+  box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+  position: relative;
+}
+
+.benefits__title {
+  width: 100%;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 42px;
+  padding: 93px 100px 88px 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-99%);
+  background-color: white;
+}
+
+.benefits__cards {
+  display: grid; /*Сщздает сетку для элемента*/
+  grid-template-columns: repeat(3, 1fr); /*3 колонки с размерами 1fr*/
+  grid-column-gap: 55px; /*Растояние между колонками*/
+  padding: 0 100px;
+}
+
+.benefits__card {
+  grid-column: span 1;
+  margin-bottom: 112px;
+}
+
+.benefits__card-pic {
+  max-width: 66px;
+  margin-bottom: 37px;
+}
+
+.benefits__card-thumb {
+  display: block;
+}
+
+.benefits__card-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 26px;
+}
+
+.benefits__card-desc {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 39px;
+}
+
+.benefits__card-link-more {
+  display: inline-block; /*Сделаем ссылку строчно-блочной*/
+  padding-right: 59px; /*Отступ вправо для стрелочки*/
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #006DFE;
+  text-decoration: none; /*Убрали подчеркивание*/
+  background: url(../img/svg/arrow-ico.svg) no-repeat 95% center; /*В качестве фона для 
+  ссылки задали изображение стрелки*/
+  transition: .2s all; /*Анимация положении стрелки*/
+}
+
+.benefits__card-link-more:hover, .benefits__card-link-more:focus {
+  background: url(../img/svg/arrow-ico.svg) no-repeat right center; /*Изменяем положение стрелки от правого края*/
+}
+
+/*benefis style end*/
+
+/*places style start*/
+
+.places {
+  margin-bottom: 131px;
+}
+
+.places__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.places__title {
+  margin-right: 15px; /* Прописали отступы между карточками Benefits of Odigo */
+}
+
+.places__view-all {
+  font-size: 16px;
+  color: #006DFE;
+  text-decoration: none;
+  background: url(../img/svg/arrow-ico.svg) no-repeat right center; 
+  padding-right: 59px;
+}
+
+.places__view-all:hover, .places__view-all:focus {
+  opacity: 0.65;
+}
+
+.places__cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  background-color: white;
+}
+
+.places__card {
+  position: relative;
+  overflow: hidden; /* Скрывает, выходящее за пределы блока, содержимое */
+}
+
+
+.places__card::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 24, 36, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* положение позиционированного объекта по оси z, т.е. положения слоя */
+}
+
+.places__card:hover .places__card-pic {
+  transform: scale(1.05); /* Увеличивает изображения при наведени нанего */
+}
+
+.places__card-title {
+  font-size: 50px;
+  line-height: 60px;
+  color: white;
+  position: absolute;
+  bottom: 27px;
+  left: 29px;
+  z-index: 3;
+}
+
+.places__card_size_lg {
+  grid-column: span 3;
+}
+
+.places__card_size_sm {
+  grid-column: span 2;
+}
+
+.places__card-pic {
+  width: 100%;
+  transition: 0.4s all;
+}
+
+.places__card-pic_size_lg {
+  height: 354px; /* Ограничение высоты изображения*/
+  object-fit: cover; /* показывает, как изображение будет масштабироваться 
+  внутри контейнера */
+}
+
+.places__card-pic_size_sm {
+  height: 283px; /* Ограничение высоты изображения*/
+  object-fit: cover; /* показывает, как изображение будет масштабироваться 
+  внутри контейнера */
+}
+
+.places__card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+/*places style end*/
+
+/*tours style start*/
+
+.tours {
+  margin-bottom: 139px;
+}
+
+.tours__grid__tour {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 108px;
+  align-items: center;
+  margin-bottom: 77px;
+}
+
+.tour__info {
+  padding-left: 47px;
+  padding-right: 47px;
+}
+
+.tour__title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 85px;
+}
+
+.tour__discription {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 58px;
+}
+
+.tour__more {
+  font-size: 16px;
+  color: #006DFE;
+  text-decoration: none;
+  background: url(../img/svg/arrow-ico.svg) no-repeat 95% center; 
+  padding-right: 59px;
+  transition: .2s all;
+}
+
+.tour__more:hover, tour__more:focus {
+  background: url(../img/svg/arrow-ico.svg) no-repeat right center;
+}
+
+/* tours style end */
+
+/* top visit style start */
+
+.top {
+  margin-bottom: 86px;
+}
+
+.top__title {
+  margin-bottom: 54px;
+}
+
+.top__grid__cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 57px;
+  grid-row-gap: 57px;
+}
+
+.top__card-pic {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.top__card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+}
+
+
+.top__card-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(21, 24, 36, 0.6);
+  padding: 16px 25px;
+}
+
+.top__card-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+  margin: 0 auto 0 0;
+}
+
+.top__card-likes {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  padding-right: 20px;
+  background: url(../img/svg/heart-ico.svg) no-repeat right;
+  margin-right: 14px;
+}
+
+.top__card-comments {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  padding-right: 25px;
+  background: url(../img/svg/comment-ico.svg) no-repeat right;
+}
+
+.top__card-desc {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 31px;
+}
+
+.top__card-more {
+  width: 118px;
+  padding: 12px 19px;
+  background: #0e66da;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  margin: auto 0 0 0;
+}
+
+.top__card-more:hover, .top__card-more:focus, .top__card-more:active {
+  background: #006DFE
+
+}
+
+/* top visit style end */
+
+/* videos style start */
+
+.videos {
+  width: 100%;
+}
+
+.videos__wrapper {
+  max-width: 1267px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.video__item {
+  padding-top: 53.75%;
+}
+
+.video__element {
+ position: absolute; 
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+/* videos syle end */
+
+/* footer style start */
+
+.footer {
+  background: #0e1d28;
+  padding: 70px 0;
+}
+
+.footer__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__logo {
+  width: 50%;
+  padding-top: 20px;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.footer__menu-title {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__menu-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer__menu-link:hover, 
+.footer__menu-link:focus, 
+.footer__menu-link:active {
+  opacity: .65;
+}
+
+/* footer style end */
+
+
+/* весь адаптив пишеться на медиазапросах. это запрос на ширину экрана */
+
+
+/* media start */
+@media screen and (max-width: 960px) {
+  .benefits {
+    margin-bottom: 65px;
+  }
+
+  .benefits__card {
+    margin-bottom: 60px;
+  }
+
+  .search-form__field {
+    margin-bottom: 25px;
+  }
+
+  .benefits__cards {
+    padding: 0 15px;
+    grid-gap: 35px;
+  }
+
+  .benefits__title {
+    padding: 55px 15px;
+  }
+
+  .places__card_size_lg {
+    grid-column: span 6;
+  }
+
+  .places__card_size_sm {
+    grid-column: span 6;
+  }
+
+  .places {
+    margin-bottom: 100px;
+  }
+
+  .tours__grid__tour {
+    grid-column-gap: 35px;
+    margin-bottom: 50px; 
+  }
+
+  .tour__info {
+    padding: 0;
+  }
+
+  .tour__title {
+    margin-bottom: 15px;
+  }
+
+  .tour__discription {
+    margin-bottom: 15px;
+  }
+
+  .tours {
+    margin-bottom: 100px;
+  }
+
+  .top__grid__cards {
+    grid-column-gap: 20px;
+  }
+
+  .top__grid__cards {
+    grid-column-gap: 25px;
+    grid-row-gap: 55px;
+  }
+
+  .top__card {
+    grid-column: span 3;
+  }
+
+  .top__card-pic {
+    margin-bottom: 25px;
+  }
+
+  .footer {
+    padding: 60px 0;
+  }
+
+  .top {
+    margin-bottom: 100px;
+  }
+}
+
+
+
+
+/* для heder */
+
+@media screen and (max-width: 767px) {
+  .section__title {
+    margin-bottom: 30px;
+  }
+
+  .section__title::after {
+    width: 130px;
+  }
+
+  .hed__berger {
+    display: block;
+  }
+
+  .hed__nav {
+    width: 100%;
+    height: 100%;
+    position: fixed; /* позиционирует относительно всего экрана */
+    top: 0;
+    left: 0;
+    background-color: #0e1d28;
+    z-index: 10;
+    padding-top: 25%;
+    padding-left: 25%;
+    transform: translateX(100%); /* изначально закрыто меню */
+    transition: .4s all linear;
+  }
+
+  .hed__wrapper {
+    padding-top: 25px;
+  }
+
+  .hed {
+    padding-bottom: 15px;
+  }
+
+  .hed__nav_active {
+    transform: translateX(0); /* для javaScript класс. при нажатии на гамбургер выезжает меню */
+    transition: .4s all linear;
+  }
+
+  .hed__list {
+    left: 50%;
+  }
+
+  .hed__item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 35px;
+    display: block;
+  }
+
+  .hed__link {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .create__line { 
+    border: 2px solid grey;
+    transform: translateX(100%);
+    padding-left: 100%;
+
+  }
+
+  .hed__item:last-child {
+    margin-bottom: 0;
+  }
+
+
+  .hed__logo-pic {
+    max-width: 80%;
+  }
+
+  .hed__berger {
+    width: 30px;
+    height: 20px;
+  }
+
+  .hed__nav-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+  }
+
+  .hed__nav-close-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+  }
+
+  .hed__nav-close-line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .hed__nav-close-line:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .intro__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .intro__subtitle {
+    font-size: 14px;
+  }
+
+  .intro {
+    padding-top: 100px;
+  }
+
+  .search-form__field {
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 12px;
+    background: transparent url(../img/svg/circle-ico.svg) no-repeat left 1px;
+  }
+
+  .search-form__field::placeholder {
+    font-size: 16px;
+  }
+
+  .search-form__submit {
+    width: 100%;
+  }
+
+  .benefits {
+    margin-bottom: 33px;
+  }
+
+  .benefits__title {
+    padding: 55px 15px 40px 15px;
+  }
+
+  .benefits__cards {
+    grid-gap: 20px;
+  }
+
+  .benefits__card {
+    grid-column: span 3;
+    margin-bottom: 0;
+  }
+
+  .benefits__card-pic {
+    margin-bottom: 20px;
+  }
+
+  .benefits__card-title {
+    margin-bottom: 12px;
+  }
+
+  .benefits__card-desc {
+    margin-bottom: 20px;
+  }
+
+  .places__card_size_lg, .places__card_size_sm {
+    height: 230px;
+  } 
+
+  .places__card-title {
+    font-size: 40px;
+  }
+
+  .places {
+    margin-bottom: 55px;
+  }
+
+  .tours {
+    margin-bottom: 55px;
+  }
+
+  .tour__pic, .tour__info {
+    grid-column: span 2;    
+  }
+
+  .tour__pic {
+    margin-bottom: 12px;
+  }
+
+  .tour__pic_mob-first {
+    grid-row-start: -1; /* меняем местами изображение и текст */
+  }
+
+  .tours__grid__tour {
+    margin-bottom: 30px;
+  }
+
+  .top__card {
+    grid-column: span 6;
+  }
+
+  .top__card-stats {
+    max-width: 386px;
+  }
+
+  .top__grid__cards {
+    grid-row-gap: 35px;
+  }
+
+  .top__card-pic {
+    margin-bottom: 12px;
+  }
+
+  .top__card-desc {
+    margin-bottom: 12px;
+  }
+
+  .top {
+    margin-bottom: 55px;
+  }
+
+  .footer {
+    padding: 30px 0 30px 0;
+  }
+
+  .footer__nav {
+    width: 100%;
+  }
+
+  .footer__logo {
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer__menu-title {
+    font-size: 17px;
+/*    margin-left: 25%;*/
+
+  }
+
+  .footer__menu-link {
+    font-size: 14px;
+/*    margin-left: 25%;*/
+  }
+
+  .footer__menu {
+    width: 50%;
+    margin-bottom: 15px;
+  }
+
+  .footer__menu-item {
+    padding-left: 25%;
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+}
+
+/* media end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
